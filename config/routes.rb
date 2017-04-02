@@ -8,4 +8,5 @@ Rails.application.routes.draw do
   resources :teachers
   resources :visitors
   get 'reports/subjects', as: :report_subjects
+  get 'teachers/subjects', as: :teacher_subjects
 end
