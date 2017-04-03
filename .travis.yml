@@ -3,6 +3,8 @@ rvm:
 before_script:
   - psql -c 'create database workshops_test;' -U postgres
   - cp config/database.yml.travis config/database.yml
+  - rails generate devise User
+  - cp config/routes.rb.travis config/routes.rb
 addons:
   postgresql: '9.3'
 script: RAILS_ENV=test bundle exec rspec
