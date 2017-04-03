@@ -4,6 +4,7 @@ class TeachersController < ApplicationController
   expose(:teachers)
   expose(:teacher, attributes: :teacher_params)
   expose(:teacher_subject_items) { teacher.subject_items }
+  expose(:subject_items) { SubjectItem.all }
   
   def subjects
   end
