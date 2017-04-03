@@ -3,5 +3,4 @@ class ReportsController < ApplicationController
   
     def subjects
     end
-
 end
