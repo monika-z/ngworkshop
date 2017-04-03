@@ -1,33 +1,36 @@
 puts "Seeds: start"
 TEACHER_TITLES = %w(Dr. Prof. TA)
+FIRST_NAMES = %w(Clint Kate Steve Natasha Antony Carol Peter Wanda Bruce Jessica Luke Janet Sam Barbara Daniel Jennifer Matthew Henry Maria Simon Patricia Reed Susan James Mary Harry Gwen Miles)
+LAST_NAMES = %w(Barton Bishop Rogers Romanoff Stark Danvers Parker Maximoff Banner Drew Cage Dyne Wilson Morse Rand Walters Murdock Pym Hill Williams Walker Richards Storm Rhodes Watson Osborn Stacy Morales)
+TITLES = %w(Math Science History Biology Art Literature PE)
 User.create!(email: 'admin@admin.com',password: 'adminadmin')
 
-30.times do
+3.times do
   Teacher.create!(
-    first_name: Faker::Name.first_name,
-    last_name: Faker::Name.last_name,
+    first_name: FIRST_NAMES.sample,
+    last_name: LAST_NAMES.sample,
     academic_title: TEACHER_TITLES.sample
   )
 end
 
 teachers = Teacher.all
-20.times do
+5.times do
   SubjectItem.create!(
-    title: Faker::Lorem.sentence,
+    title: TITLES.sample,
     teacher: teachers.sample
   )
 end
 
-40.times do
+25.times do
   Student.create!(
-    first_name: Faker::Name.first_name,
-    last_name: Faker::Name.last_name
+    first_name: FIRST_NAMES.sample,
+    last_name: LAST_NAMES.sample
   )
 end
 
 students = Student.all
 SubjectItem.all.each do |subject_item|
-  subject_item.students << students.sample(rand(1..4))
+  subject_item.students << students.sample(rand(1..5))
 end
 
 SubjectItem.all.each do |subject_item|
