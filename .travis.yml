@@ -4,6 +4,7 @@ before_script:
   - psql -c 'create database workshops_test;' -U postgres
   - cp config/database.yml.travis config/database.yml
   - rails generate devise User
+  - bin/rake db:migrate RAILS_ENV=test
   - cp config/routes.rb.travis config/routes.rb
 addons:
   postgresql: '9.3'
