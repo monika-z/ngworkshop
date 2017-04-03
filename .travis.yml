@@ -6,7 +6,4 @@ before_script:
 addons:
   postgresql: '9.3'
 script: RAILS_ENV=test bundle exec rspec
-before_install:
-  - "gem update --system"
-  - "gem update bundler"
 bundler_args: ''
