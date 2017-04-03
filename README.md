@@ -1,4 +1,4 @@
-RoR Workshops {<img src="https://travis-ci.org/monika-z/ngworkshop.svg?branch=master" alt="Build Status" />}[https://travis-ci.org/monika-z/ngworkshop]
+RoR Workshops <img src="https://travis-ci.org/monika-z/ngworkshop.svg?branch=master" alt="Build Status" />
 ================
 
 Hi! We think it’s great that you want to start learning **Ruby on Rails**. Taking part in workshops is also a **great opportunity to start working** with us and become one of the Netguru folks. Since you have just taken your first step on your adventure with programming in RoR, we challenge you to complete the following task. **Ready, steady… Go!**
