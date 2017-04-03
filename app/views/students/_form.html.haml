@@ -1,6 +1,8 @@
 = simple_form_for student do |f|
   = f.input :first_name
   = f.input :last_name
+  = f.label "Birthday"
+  = f.date_select :birthday, :start_year => Date.current.year, :end_year => 1920, :include_blank => true, :required => false
   = f.association :subject_items, label_method: :title, value_method: :id, label: 'Subject Items', as: :check_boxes
   = link_to t('shared.back'), students_path, class: 'btn btn-default'
   = f.button :submit
