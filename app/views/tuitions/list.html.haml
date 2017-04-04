@@ -1,0 +1,17 @@
+.tuitions
+  List of tuitions payment deadlines:
+  %table.table.table-condensed
+    %thead
+      %tr
+        %th.full-name= 'Students'
+        - tuitions.order(:deadline).each do |tuition|
+          %th.deadline= tuition.deadline
+    %tbody
+    - students.each do |student|
+      %tr
+        %td= student.decorate.full_name
+        - tuitions.order(:deadline).each do |tuition|
+          - if tuition.students.exists?(student)
+            %td= "payed"
+          - else
+            %td= "unpaid"

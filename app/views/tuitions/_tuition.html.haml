@@ -1,0 +1,16 @@
+.title
+  = 'Date:'
+  = tuition.deadline
+%table.table.table-condensed
+  %thead
+    %tr
+      %th.full-name= 'Students'
+      %th.payed='Already Payed'
+  %tbody
+    - students.each do |student|
+      %tr
+        %td= student.decorate.full_name
+        - if tuition.students.exists?(student)
+          %td= "yes"
+        - else
+          %td= "no"

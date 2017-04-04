@@ -1,4 +1,5 @@
 puts "Seeds: start"
+
 TEACHER_TITLES = %w(Dr. Prof. TA)
 FIRST_NAMES = %w(Clint Kate Steve Natasha Antony Carol Peter Wanda Bruce Jessica Luke Janet Sam Barbara Daniel Jennifer Matthew Henry Maria Simon Patricia Reed Susan James Mary Harry Gwen Miles)
 LAST_NAMES = %w(Barton Bishop Rogers Romanoff Stark Danvers Parker Maximoff Banner Drew Cage Dyne Wilson Morse Rand Walters Murdock Pym Hill Williams Walker Richards Storm Rhodes Watson Osborn Stacy Morales)
@@ -42,5 +43,14 @@ SubjectItem.all.each do |subject_item|
     end
   end
 end
+
+from = Date.today
+to = Date.today + 2.years
+4.times do
+    Tuition.create!(
+    deadline: Time.at((from.to_time.to_f - to.to_time.to_f) * rand +
+               to.to_time.to_f)
+  )
+end  
 
 puts "Seeds: done"

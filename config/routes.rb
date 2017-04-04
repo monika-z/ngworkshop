@@ -10,5 +10,5 @@ Rails.application.routes.draw do
   end
   resources :visitors
   get 'reports/subjects', as: :report_subjects
-  #get 'teachers/subjects', as: :teacher_subjects
+  get 'tuitions/list', as: :tuition_list
 end
