@@ -1,0 +1,5 @@
+= simple_form_for tuition do |f|
+  = f.label "Deadline"
+  = f.date_select :deadline, :start_year => Date.current.year, :end_year => 2020, :required => true
+  = link_to t('shared.back'), tuitions_path, class: 'btn btn-default'
+  = f.button :submit

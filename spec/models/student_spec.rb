@@ -9,15 +9,19 @@ RSpec.describe Student do
   describe 'database columns' do
     it { should have_db_column :first_name }
     it { should have_db_column :last_name }
+    it { should have_db_column :birthday }
   end
 
   describe 'associations' do
     it { is_expected.to have_many :subject_items }
     it { is_expected.to have_many :subject_item_notes }
     it { is_expected.to have_many :participations }
+    it { is_expected.to have_many :payments }
+    it { is_expected.to have_many :tuitions }
   end
 
   describe 'nested attributes' do
     it { should accept_nested_attributes_for :subject_items }
+    it { should accept_nested_attributes_for :tuitions }
   end
 end

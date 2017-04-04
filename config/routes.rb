@@ -9,6 +9,7 @@ Rails.application.routes.draw do
     get :subjects
   end
   resources :visitors
+  resources :tuitions
   get 'reports/subjects', as: :report_subjects
   get 'tuitions/list', as: :tuition_list
 end
