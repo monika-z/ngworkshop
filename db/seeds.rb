@@ -22,10 +22,14 @@ teachers = Teacher.all
   )
 end
 
+start = Date.today - 17.years
+finish = Date.today - 7.years
 25.times do
   Student.create!(
     first_name: FIRST_NAMES.sample,
-    last_name: LAST_NAMES.sample
+    last_name: LAST_NAMES.sample,
+    birthday: Time.at((start.to_time.to_f - finish.to_time.to_f) * rand +
+               finish.to_time.to_f)
   )
 end
 
@@ -51,6 +55,6 @@ to = Date.today + 2.years
     deadline: Time.at((from.to_time.to_f - to.to_time.to_f) * rand +
                to.to_time.to_f)
   )
-end  
+end 
 
 puts "Seeds: done"
