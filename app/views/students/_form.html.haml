@@ -4,6 +4,6 @@
   = f.label "Birthday"
   = f.date_select :birthday, :start_year => Date.current.year, :end_year => 1920, :include_blank => true, :required => false
   = f.association :subject_items, label_method: :title, value_method: :id, label: 'Subject Items', as: :check_boxes
-  = f.association :tuitions, label_method: :deadline, value_method: :deadline, label: 'Tuitions payed', as: :check_boxes
+  = f.association :tuitions, label_method: :deadline, value_method: :id, label: 'Tuitions payed', as: :check_boxes
   = link_to t('shared.back'), students_path, class: 'btn btn-default'
   = f.button :submit
